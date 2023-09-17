@@ -2,7 +2,7 @@
 レイアウトはほぼそのままでPukiWikiに使い慣れている方でも使いこなせるPukiWiki用の自作スキンです。<br />
 作者自身はPukiWikiをブログとして使いたかったので少しブログ風のデザインに仕上げました。<br />
 スマホではメニューをハンバーガーメニュー化しています。<br /><br />
-はいふん氏の[ModernSkin](https://github.com/hai-fun/modern-skin/)を一部ベースにしています。
+タイトル下の説明部分ははいふん氏の[ModernSkin](https://github.com/hai-fun/modern-skin/)をベースにしています。
 
 ## 導入
 README.md, .gitignore以外のすべてのファイルをPukiWikiルートフォルダ直下にコピーする<br />
