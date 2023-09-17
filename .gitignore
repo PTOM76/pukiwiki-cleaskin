@@ -1,7 +1,6 @@
 *
 !.gitignore
 !skin/cleaskin/*
-!skin/
 !README.md
 !image/add.png
 !image/atom.png
