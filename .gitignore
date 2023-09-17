@@ -1,8 +1,6 @@
 *
 !.gitignore
 !skin/cleaskin/*
-!skin/cleaskin/cleaskin.css
-!skin/cleaskin/pukiwiki.skin.php
 !skin/
 !README.md
 !image/add.png
