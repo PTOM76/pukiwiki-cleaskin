@@ -1,4 +1,7 @@
 # Cleaskin - PukiWikiスキン
+パソコンでの表示のレイアウトはほぼそのままでPukiWikiに使い慣れている方でも使いこなせるPukiWiki用スキンです。<br />
+作者自身はPukiWikiをブログとして使いたかったので少しブログ風のデザインに仕上げました。
+
 ## 導入
 README.md, .gitignore以外のすべてのファイルをPukiWikiルートフォルダ直下にコピーする<br />
 pukiwiki.ini.phpの
