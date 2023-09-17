@@ -1,6 +1,7 @@
 # Cleaskin - PukiWikiスキン
-パソコンでの表示のレイアウトはほぼそのままでPukiWikiに使い慣れている方でも使いこなせるPukiWiki用スキンです。<br />
-作者自身はPukiWikiをブログとして使いたかったので少しブログ風のデザインに仕上げました。
+レイアウトはほぼそのままでPukiWikiに使い慣れている方でも使いこなせるPukiWiki用スキンです。<br />
+作者自身はPukiWikiをブログとして使いたかったので少しブログ風のデザインに仕上げました。<br />
+スマホではメニューをハンバーガーメニュー化しています。
 
 ## 導入
 README.md, .gitignore以外のすべてのファイルをPukiWikiルートフォルダ直下にコピーする<br />
@@ -14,7 +15,12 @@ define('SKIN_DIR', 'skin/cleaskin/');
 ```
 
 ## イメージ画像
+### PC
 ![image](https://github.com/PTOM76/pukiwiki-cleaskin/assets/58260965/eb417d2c-865d-49be-8b4a-3b8a0bc23363)
+
+### スマホ
+![image](https://github.com/PTOM76/pukiwiki-cleaskin/assets/58260965/895467b6-99c9-430c-814a-a2fa40a95d6f)
+![image](https://github.com/PTOM76/pukiwiki-cleaskin/assets/58260965/0403f6cb-ecc0-4768-b81a-dd8411e0547b)
 
 ## 特徴
 - PHP8対応
