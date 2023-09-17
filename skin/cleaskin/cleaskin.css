@@ -24,6 +24,24 @@ body,td {
   font-family:verdana, arial, helvetica, Sans-Serif;
 }
 
+.container-bg {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: -8px;
+  /* ぼかし */
+  /*
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  */
+}
+
 textarea {
   box-sizing:border-box;
   max-width:99.5%;

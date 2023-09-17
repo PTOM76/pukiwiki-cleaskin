@@ -1,7 +1,8 @@
 # Cleaskin - PukiWikiスキン
 レイアウトはほぼそのままでPukiWikiに使い慣れている方でも使いこなせるPukiWiki用スキンです。<br />
 作者自身はPukiWikiをブログとして使いたかったので少しブログ風のデザインに仕上げました。<br />
-スマホではメニューをハンバーガーメニュー化しています。
+スマホではメニューをハンバーガーメニュー化しています。<br /><br />
+はいふん氏の[ModernSkin](https://github.com/hai-fun/modern-skin/)を一部ベースにしています。
 
 ## 導入
 README.md, .gitignore以外のすべてのファイルをPukiWikiルートフォルダ直下にコピーする<br />

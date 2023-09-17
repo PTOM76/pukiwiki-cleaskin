@@ -1,12 +1,18 @@
 <?php
 /*
 name: cleaskin
-version: v1.1
+version: v1.2
 */
 
 
 // タイトル下に表示するWikiの説明
 define("WIKI_EXPLAIN", "Powered by PukiWiki");
+
+// 背景 (画像の設定を優先する)
+// 背景画像
+define("BACKGROUND_IMAGE", "");
+// 背景色
+define("BACKGROUND_COLOR", "#DDEEFF");
 
 // PukiWiki - Yet another WikiWikiWeb clone.
 // pukiwiki.skin.php
@@ -16,7 +22,7 @@ define("WIKI_EXPLAIN", "Powered by PukiWiki");
 //   2001-2002 Originally written by yu-ji
 // License: GPL v2 or (at your option) any later version
 //
-// cleaskin
+// cleaskin based modern skin
 
 // ------------------------------------------------------------
 // Settings (define before here, if you want)
@@ -124,6 +130,16 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
   </head>
   <body>
     <?php echo $html_scripting_data ?>
+    <?php if (!empty(BACKGROUND_IMAGE)) { ?>
+      <div class="container-bg" style="background-image: url('<?= BACKGROUND_IMAGE ?>');background-size: cover;"></div>
+    <?php } else if (!empty(BACKGROUND_COLOR)) {
+    ?>
+      <div class="container-bg" style="background-color: <?= BACKGROUND_COLOR ?>;"></div>
+    <?php } else {
+    ?>
+      <div class="container-bg" style="background-color: #DDEEFF;"></div>
+    <?php
+    } ?>
     <div id="header">
       <div id="h_contents">
         <a href="<?php echo $link['top'] ?>"><img id="logo" src="<?php echo IMAGE_DIR . $image['logo'] ?>" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
