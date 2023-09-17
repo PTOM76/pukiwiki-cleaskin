@@ -1,7 +1,7 @@
 <?php
 /*
 name: cleaskin
-version: v1.2
+version: 1.3
 */
 
 
