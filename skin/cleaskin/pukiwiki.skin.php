@@ -125,21 +125,22 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo $link['rss'] ?>" /><?php // RSS auto-discovery ?>
     <script type="text/javascript" src="skin/main.js" defer></script>
     <script type="text/javascript" src="skin/search2.js" defer></script>
-
-    <?php echo $head_tag ?>
+<?php echo $head_tag ?>
   </head>
   <body>
-    <?php echo $html_scripting_data ?>
-    <?php if (!empty(BACKGROUND_IMAGE)) { ?>
-      <div class="container-bg" style="background-image: url('<?= BACKGROUND_IMAGE ?>');background-size: cover;"></div>
-    <?php } else if (!empty(BACKGROUND_COLOR)) {
-    ?>
-      <div class="container-bg" style="background-color: <?= BACKGROUND_COLOR ?>;"></div>
-    <?php } else {
-    ?>
-      <div class="container-bg" style="background-color: #DDEEFF;"></div>
-    <?php
-    } ?>
+<?php echo $html_scripting_data ?>
+<?php if (!empty(BACKGROUND_IMAGE)) { ?>
+
+    <div class="container-bg" style="background-image: url('<?= BACKGROUND_IMAGE ?>');background-size: cover;"></div>
+<?php } else if (!empty(BACKGROUND_COLOR)) {
+?>
+
+    <div class="container-bg" style="background-color: <?= BACKGROUND_COLOR ?>;"></div>
+<?php } else {
+?>
+    <div class="container-bg" style="background-color: #DDEEFF;"></div>
+<?php
+} ?>
     <div id="header">
       <div id="h_contents">
         <a href="<?php echo $link['top'] ?>"><img id="logo" src="<?php echo IMAGE_DIR . $image['logo'] ?>" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>

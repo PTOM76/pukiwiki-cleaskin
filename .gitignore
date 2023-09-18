@@ -3,6 +3,8 @@
 /*.js
 /*.html
 /*.json
+.replit
+replit.nix
 .htaccess
 .htpasswd
 /attach/
