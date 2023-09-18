@@ -1006,6 +1006,7 @@ div#m_navigator {
 .bg_m_menubar {
   display: block;
   position: fixed;
+  z-index: 100;
   top: 0px;
   left: 0px;
   right: -150%;
