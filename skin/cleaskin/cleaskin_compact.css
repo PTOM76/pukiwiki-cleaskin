@@ -8,7 +8,7 @@
  *   2001-2002 Originally written by yu-ji
  * License: GPL v2 or (at your option) any later version
  *
- * cleaskin
+ * cleaskin compact
  */
 
 pre, dl, ol, p, blockquote {
@@ -49,31 +49,23 @@ textarea {
 
 a:link {
   color:#215dc6;
+  background-color:inherit;
   text-decoration:none;
 }
 a:active {
   color:#215dc6;
+  background-color:inherit;
   text-decoration:none;
 }
 a:visited {
-  color:#534195;
+  color:#a63d21;
+  background-color:inherit;
   text-decoration:none;
 }
 a:hover {
   color:#215dc6;
+  background-color:inherit;
   text-decoration:underline;
-}
-h2 a:link {
-  color:#b6ddff;
-}
-h2 a:active {
-  color:#b6ddff;
-}
-h2 a:visited {
-  color:#e6c6ff;
-}
-h2 a:hover {
-  color:#b6ddff;
 }
 a.external-link:not(.external-link-silent)::after {
   content:url(../image/external-link.png);
@@ -86,18 +78,16 @@ a.title {
 }
 
 h1, h2 {
-  color: white;
-  font-family: verdana, arial, helvetica, Sans-Serif;
-  background-color: #5FAFDF;
-  padding: .5em;
-  border: 0;
-  margin: 0 0 .5em 0;
-  font-weight: bold;
-  font-size: 25px;
-  border-radius: 5px;
-  line-height: 32px;
+  font-family:verdana, arial, helvetica, Sans-Serif;
+  color:inherit;
+  background-color:#AADDFF;
+  padding:.5em;
+  border:0;
+  margin:0 0 .5em 0;
+  font-weight:bold;
+  font-size:25px;
+  border-radius:5px;
 }
-
 h3 {
   font-family:verdana, arial, helvetica, Sans-Serif;
   border-bottom:4px solid #AADDFF;
@@ -135,7 +125,6 @@ h5, h6 {
   font-weight:bold;
 }
 h1.title {
-  color: inherit;
   font-family:verdana, arial, helvetica, Sans-Serif;
   font-size:32px;
   font-weight:normal;
@@ -148,7 +137,6 @@ div#path {
   margin-top: -15px;
   margin-bottom: 4px;
   text-align: right;
-  line-height: 16px;
 }
 
 dt {
@@ -479,6 +467,19 @@ div#menubar form div label, div#rightbar form div label, .m_menubar form div lab
   display:none;
 }
 
+div#menubar input[name=word], div#rightbar input[name=word] {
+  min-width:5em;
+  width: 16.6em;
+  max-width:30em;
+  margin-right:-5px;
+}
+
+.m_menubar input[name=word] {
+  min-width:5em;
+  width: calc(100% - 75px);
+  max-width:30em;
+  margin-right:-5px;
+}
 select[name=template_page] {
   min-width:5em;
   max-width:58.7em;
@@ -857,79 +858,36 @@ tr.bugtrack_state_undef td {
 }
 
 input[type=submit], input[type=button], button {
-  text-decoration: none;
-  text-align: center;
-  background-color: #F0F0F0;
-  border: 1px solid #CACACA;
-  font-size: 15px;
-  transition: all 0.5s ease;
-  border-radius: 4px;
+    text-decoration: none;
+    text-align:center;
+    background-color:#F0F0F0;
+    border:1px solid #CACACA;
+    font-size:15px;
+    transition: all 0.5s ease;
 }
 
 input[type=submit]:hover, input[type=button]:hover, button:hover {
-  background-color: #E0EFFA;
-  margin-left: 0px;
-  margin-top: 0px;
-  border: 1px solid #0080D6;
-  box-shadow: none;
+    background-color:#E0EFFA;
+    margin-left:0px;
+    margin-top:0px;
+    border:1px solid #0080D6;
+    box-shadow:none;
 }
 
 input[type=text], input[type=password], input[type=search], textarea, select {
-  background-color: #fff;
-  border: 1px solid #CACACA;
-  font-size: 14px;
-  transition: all 0.5s ease;
-  padding-bottom: 4px;
-  padding-top: 4px;
-  border-radius: 4px;
+	background-color:#fff;
+    border:1px solid #CACACA;
+    font-size:14px;
+    transition: all 0.5s ease;
+    padding-bottom:4px;
+    padding-top:4px;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=search]:focus, textarea:focus, select:focus {
-    background-color: #F4FAFF;
-    border: 1px solid #0080D6;
-    box-shadow: none;
-    outline: none;
-}
-
-input[type=search], input[name=word] {
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 4px;
-}
-
-._plugin_search2_form input[type=search], 
-div#menubar input[name=word], 
-div#rightbar input[name=word], 
-.m_menubar input[name=word] {
-  margin-right: -6.3px;
-  border-radius: 4px 0 0 4px;
-}
-
-._plugin_search2_form input[type=submit], input[name=word] + label + label + input[type=submit] {
-  padding: 5px 10px 5px 10px;
-  font-size: 16px;
-  border-radius: 4px;
-}
-
-._plugin_search2_form input[type=submit], 
-div#menubar input[name=word] + label + label + input[type=submit], 
-div#rightbar input[name=word] + label + label + input[type=submit], 
-.m_menubar input[name=word] + label + label + input[type=submit] {
-  border-radius: 0 4px 4px 0;
-}
-
-div#menubar input[name=word], div#rightbar input[name=word] {
-  min-width: 5em;
-  width: 16.6em;
-  max-width: 13.5em;
-  margin-right: -11.2px;
-}
-
-.m_menubar input[name=word] {
-  min-width: 5em;
-  width: calc(100% - 90px);
-  max-width: 13.5em;
-  margin-right: -11.2px;
+    background-color:#F4FAFF;
+    border:1px solid #0080D6;
+    box-shadow:none;
+    outline:none;
 }
 
 /* Mobile-friendly Responsive layout */
@@ -1014,7 +972,7 @@ div#menubar input[name=word], div#rightbar input[name=word] {
 
 div#m_navigator {
   text-align: center;
-  margin-top: -11px;
+  margin-top: -10px;
   margin-bottom: 10px;
   display: none;
   background: white;
@@ -1132,4 +1090,3 @@ div#global-navi span a:hover {
   .m_menubar_btn {
     display:inline-block;
   }
-}

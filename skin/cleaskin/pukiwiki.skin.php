@@ -1,18 +1,33 @@
 <?php
 /*
 name: cleaskin
-version: 1.3
+version: 1.4
 */
 
 
-// タイトル下に表示するWikiの説明
-define("WIKI_EXPLAIN", "Powered by PukiWiki");
+// タイトル下の文字
+define("EXPLAIN", "Powered by PukiWiki");
 
 // 背景 (画像の設定を優先する)
 // 背景画像
 define("BACKGROUND_IMAGE", "");
+
 // 背景色
 define("BACKGROUND_COLOR", "#DDEEFF");
+
+// グローバルナビ
+define("GLOBAL_NAVI", 1); // 1, 0
+
+// 主要ページ (グローバルナビのリンク)
+define("GLOBAL_NAVI_LINKS", array(
+  // '表示名' => 'ページ名',
+  'トップ' => 'FrontPage',
+  'ヘルプ' => 'Help',
+  'PukiWiki' => 'PukiWiki',
+));
+
+// CSSファイル "cleaskin.css" or "cleaskin_compact.css"
+define("CSS_FILE", "cleaskin.css");
 
 // PukiWiki - Yet another WikiWikiWeb clone.
 // pukiwiki.skin.php
@@ -119,9 +134,11 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
     <?php if ($nofollow || ! $is_read)  { ?> <meta name="robots" content="NOINDEX,NOFOLLOW" /><?php } ?>
     <?php if ($html_meta_referrer_policy) { ?> <meta name="referrer" content="<?php echo htmlsc(html_meta_referrer_policy) ?>" /><?php } ?>
     
-    <title><?php echo $title ?> - <?php echo $page_title ?></title>
+    <title><?php echo $title ?> | <?php echo $page_title ?></title>
     <link rel="SHORTCUT ICON" href="<?php echo $image['favicon'] ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo SKIN_DIR ?>cleaskin.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo SKIN_DIR . CSS_FILE ?>" />
+    <script>console.log("loaded css")</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo $link['rss'] ?>" /><?php // RSS auto-discovery ?>
     <script type="text/javascript" src="skin/main.js" defer></script>
     <script type="text/javascript" src="skin/search2.js" defer></script>
@@ -146,7 +163,7 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
         <a href="<?php echo $link['top'] ?>"><img id="logo" src="<?php echo IMAGE_DIR . $image['logo'] ?>" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
  
         <h1 class="title"><a class="title" href="<?php echo $link['top'] ?>"><?php echo $page_title ?></a></h1>
-        <?php echo WIKI_EXPLAIN ?>
+        <?php echo EXPLAIN ?>
 
         <label for="flag_m_menubar" class="m_menubar_btn">≡</label>
         <input type="checkbox" id="flag_m_menubar" class="check_m_menubar" />
@@ -204,7 +221,6 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
       </div>
     </div>
 
-
     <div id="m_navigator">
 <?php if(PKWK_SKIN_SHOW_NAVBAR) { ?>
 <?php if ($is_page || arg_check('backup')) { ?>
@@ -242,7 +258,17 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
  <?php } ?>
 <?php } // PKWK_SKIN_SHOW_NAVBAR ?>
     </div>
-    
+<?php if (GLOBAL_NAVI) { ?>
+    <div id="global-navi-wrap">
+      <div id="global-navi">
+<?php
+  foreach (GLOBAL_NAVI_LINKS as $naviname => $navilink) {
+    echo '<span><a href="' . $navilink . '">' . $naviname . '</a></span>';
+  }
+?>
+      </div>
+    </div>
+<?php } ?>
     <div id="contents">
       <div id="body">
         <div id="path">
@@ -269,6 +295,11 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
 } 
 ?>
         </div>
+        <?php
+          if (!$is_read && substr($body, 0, 3) !== '<h2') {
+            echo "<h2>" . $title . "</h2>";
+          } 
+        ?>
         <?php echo $body ?>
       </div>
 <?php if ($menu) { ?>
