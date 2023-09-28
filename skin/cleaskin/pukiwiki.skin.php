@@ -6,7 +6,7 @@ version: 1.4
 
 
 // タイトル下の文字
-define("EXPLAIN", "Powered by PukiWiki");
+define("SKIN_EXPLAIN", "Powered by PukiWiki");
 
 // 背景 (画像の設定を優先する)
 // 背景画像
@@ -28,6 +28,17 @@ define("GLOBAL_NAVI_LINKS", array(
 
 // CSSファイル "cleaskin.css" or "cleaskin_compact.css"
 define("CSS_FILE", "cleaskin.css");
+
+////////////////////////////
+// SEO関連
+
+// Cleaskin付属SEO機能
+define("CLEASKIN_SEO", 1); // 1, 0
+
+// description
+define("CS_SEO_DESCRIPTION", "");
+
+
 
 // PukiWiki - Yet another WikiWikiWeb clone.
 // pukiwiki.skin.php
@@ -142,6 +153,34 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo $link['rss'] ?>" /><?php // RSS auto-discovery ?>
     <script type="text/javascript" src="skin/main.js" defer></script>
     <script type="text/javascript" src="skin/search2.js" defer></script>
+<?php
+if (CLEASKIN_SEO) {
+  if (!empty(CS_SEO_DESCRIPTION)) {
+?>
+    <meta name="description" content="<?= CS_SEO_DESCRIPTION ?>" />
+<?php
+  }
+  $root_url = (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'];
+?>
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "<?= $page_title ?>",
+      "url" : "<?= $root_url ?>",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "<?= $root_url . $_SERVER['SCRIPT_NAME'] ?>/?cmd=search2&q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+<?php
+}
+?>
 <?php echo $head_tag ?>
   </head>
   <body>
@@ -163,7 +202,7 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
         <a href="<?php echo $link['top'] ?>"><img id="logo" src="<?php echo IMAGE_DIR . $image['logo'] ?>" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
  
         <h1 class="title"><a class="title" href="<?php echo $link['top'] ?>"><?php echo $page_title ?></a></h1>
-        <?php echo EXPLAIN ?>
+        <?php echo SKIN_EXPLAIN ?>
 
         <label for="flag_m_menubar" class="m_menubar_btn">≡</label>
         <input type="checkbox" id="flag_m_menubar" class="check_m_menubar" />
