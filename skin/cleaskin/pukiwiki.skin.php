@@ -263,7 +263,7 @@ header('Content-Type: text/html; charset=' . CONTENT_CHARSET);
       <div id="global-navi">
 <?php
   foreach (GLOBAL_NAVI_LINKS as $naviname => $navilink) {
-    echo '<span><a href="' . $navilink . '">' . $naviname . '</a></span>';
+    echo '<span><a href="?' . $navilink . '">' . $naviname . '</a></span>';
   }
 ?>
       </div>
