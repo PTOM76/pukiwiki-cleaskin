@@ -6,64 +6,75 @@ version: 1.6
 
 
 // タイトル下の文字
-define("SKIN_EXPLAIN", "Powered by PukiWiki");
+if (!defined('SKIN_EXPLAIN'))
+  define("SKIN_EXPLAIN", "Powered by PukiWiki");
 
 // 背景 (画像の設定を優先する)
 // 背景画像
-define("BACKGROUND_IMAGE", "");
+if (!defined('BACKGROUND_IMAGE'))
+  define("BACKGROUND_IMAGE", "");
 
 // 背景色
-define("BACKGROUND_COLOR", "#DDEEFF");
+if (!defined('BACKGROUND_COLOR'))
+  define("BACKGROUND_COLOR", "#DDEEFF");
 
 // グローバルナビ
-define("GLOBAL_NAVI", 1); // 1, 0
+if (!defined('GLOBAL_NAVI'))
+  define("GLOBAL_NAVI", 1); // 1, 0
 
 // 主要ページ (グローバルナビのリンク)
-define("GLOBAL_NAVI_LINKS", array(
-  // '表示名' => 'ページ名',
-  'トップ' => 'FrontPage',
-  'ヘルプ' => 'Help',
-  'PukiWiki' => 'PukiWiki',
-));
+if (!defined('GLOBAL_NAVI_LINKS'))
+  define("GLOBAL_NAVI_LINKS", array(
+    // '表示名' => 'ページ名',
+    'トップ' => 'FrontPage',
+    'ヘルプ' => 'Help',
+    'PukiWiki' => 'PukiWiki',
+  ));
 
 // CSSファイル "cleaskin.css" or "cleaskin_compact.css"
-define("CSS_FILE", "cleaskin.css");
+if (!defined('CSS_FILE'))
+  define("CSS_FILE", "cleaskin.css");
 
 ////////////////////////////////
 // シェア機能
-define("CLEASKIN_SHARE", 0); // 1, 0
+if (!defined('CLEASKIN_SHARE'))
+  define("CLEASKIN_SHARE", 0); // 1, 0
 
 // シェア先
-define("CS_SHARES", array(
-  'twitter' => [
-    'icon' => SKIN_DIR . '/image/share/twitter.png',
-    'link' => 'https://twitter.com/share?url={url_string}&text={text_string}',
-  ],
-  'facebook' => [
-    'icon' => SKIN_DIR . '/image/share/facebook.png',
-    'link' => 'http://www.facebook.com/share.php?u={url_string}&t={text_string}',
-  ],
-  'hateb' => [
-    'icon' => SKIN_DIR . '/image/share/hateb.png',
-    'link' => 'https://b.hatena.ne.jp/entry/s/?{url_string_without_protocol}',
-  ],
-  'pocket' => [
-    'icon' => SKIN_DIR . '/image/share/pocket.png',
-    'link' => 'https://getpocket.com/edit?url={url_string}',
-  ],
-));
+if (!defined('CS_SHARES'))
+  define("CS_SHARES", array(
+    'twitter' => [
+      'icon' => SKIN_DIR . '/image/share/twitter.png',
+      'link' => 'https://twitter.com/share?url={url_string}&text={text_string}',
+    ],
+    'facebook' => [
+      'icon' => SKIN_DIR . '/image/share/facebook.png',
+      'link' => 'http://www.facebook.com/share.php?u={url_string}&t={text_string}',
+    ],
+    'hateb' => [
+      'icon' => SKIN_DIR . '/image/share/hateb.png',
+      'link' => 'https://b.hatena.ne.jp/entry/s/?{url_string_without_protocol}',
+    ],
+    'pocket' => [
+      'icon' => SKIN_DIR . '/image/share/pocket.png',
+      'link' => 'https://getpocket.com/edit?url={url_string}',
+    ],
+  ));
 
 ////////////////////////////////
 // SEO関連
 
 // Cleaskin付属SEO機能
-define("CLEASKIN_SEO", 1); // 1, 0
+if (!defined('CLEASKIN_SEO'))
+  define("CLEASKIN_SEO", 1); // 1, 0
 
 // description
-define("CS_SEO_DESCRIPTION", "");
+if (!defined('CS_SEO_DESCRIPTION'))
+  define("CS_SEO_DESCRIPTION", "");
 
 // json-ld
-define("CS_SEO_JSONLD", 0); // 1, 0
+if (!defined('CS_SEO_JSONLD'))
+  define("CS_SEO_JSONLD", 0); // 1, 0
 
 
 
