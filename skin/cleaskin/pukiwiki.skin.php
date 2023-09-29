@@ -1,7 +1,7 @@
 <?php
 /*
 name: cleaskin
-version: 1.5
+version: 1.6
 */
 
 
@@ -29,7 +29,31 @@ define("GLOBAL_NAVI_LINKS", array(
 // CSSファイル "cleaskin.css" or "cleaskin_compact.css"
 define("CSS_FILE", "cleaskin.css");
 
-////////////////////////////
+////////////////////////////////
+// シェア機能
+define("CLEASKIN_SHARE", 0); // 1, 0
+
+// シェア先
+define("CS_SHARES", array(
+  'twitter' => [
+    'icon' => SKIN_DIR . '/image/share/twitter.png',
+    'link' => 'https://twitter.com/share?url={url_string}&text={text_string}',
+  ],
+  'facebook' => [
+    'icon' => SKIN_DIR . '/image/share/facebook.png',
+    'link' => 'http://www.facebook.com/share.php?u={url_string}&t={text_string}',
+  ],
+  'hateb' => [
+    'icon' => SKIN_DIR . '/image/share/hateb.png',
+    'link' => 'https://b.hatena.ne.jp/entry/s/?{url_string_without_protocol}',
+  ],
+  'pocket' => [
+    'icon' => SKIN_DIR . '/image/share/pocket.png',
+    'link' => 'https://getpocket.com/edit?url={url_string}',
+  ],
+));
+
+////////////////////////////////
 // SEO関連
 
 // Cleaskin付属SEO機能
@@ -38,7 +62,21 @@ define("CLEASKIN_SEO", 1); // 1, 0
 // description
 define("CS_SEO_DESCRIPTION", "");
 
+// json-ld
 define("CS_SEO_JSONLD", 0); // 1, 0
+
+
+
+function cs_create_share_tag() {
+  $tag = '<div style="text-align:center;margin:auto 0;margin-bottom:2px;margin-top:-7px;" class="share_btns">';
+  foreach (CS_SHARES as $name => $data) {
+    $tag .= '&nbsp;<a class="share_btn" target="_blank" href="' . $data['link'] . '"><img src="' . $data['icon'] . '" alt="share on ' . $name . '" width="40" height="40" /></a>&nbsp;';
+  }
+  return $tag . '</div>';
+}
+
+
+$cs_share_tag = CLEASKIN_SHARE ? cs_create_share_tag() : '';
 
 
 
@@ -184,6 +222,24 @@ if (CLEASKIN_SEO) {
 <?php
   }
 }
+if (CLEASKIN_SHARE) {
+?>
+    <script>
+    window.addEventListener("load", function() {
+      var $btn = document.getElementsByClassName("share_btn");
+      for (var $i = 0; $i < $btn.length; ++$i) {
+        $btn[$i].addEventListener("click", function($e) {
+          $e.preventDefault();
+          this.href = this.href.replace('?{url_string_without_protocol}', encodeURI(location.hostname + location.pathname + location.search));
+          this.href = this.href.replace('{url_string}', encodeURI(location.href));
+          this.href = this.href.replace('{text_string}', encodeURI(document.title));
+          window.open(this.href, "SNS_window", "width=600, height=500, menubar=no, toolbar=no, scrollbars=yes");
+        }, false);
+      }
+    });
+    </script>
+<?php
+}
 ?>
 <?php echo $head_tag ?>
   </head>
@@ -312,6 +368,7 @@ if (CLEASKIN_SEO) {
       </div>
     </div>
 <?php } ?>
+    <?= $cs_share_tag ?>
     <div id="contents">
       <div id="body">
         <div id="path">
