@@ -4,6 +4,9 @@ name: cleaskin
 version: 1.6
 */
 
+if (file_exists(SKIN_DIR . "config.ini.php")) {
+  include_once(SKIN_DIR . "config.ini.php");
+}
 
 // タイトル下の文字
 if (!defined('SKIN_EXPLAIN'))
