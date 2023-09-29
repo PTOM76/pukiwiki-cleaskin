@@ -16,11 +16,11 @@ define('SKIN_DIR', 'skin/cleaskin/');
 
 ## イメージ画像
 ### PC
-![image](https://github.com/PTOM76/pukiwiki-cleaskin/assets/58260965/eb417d2c-865d-49be-8b4a-3b8a0bc23363)
+![image](https://github.com/PTOM76/pukiwiki-cleaskin/assets/58260965/478f1142-f08e-4ded-be69-2fdbf9dc0f3a)
 
 ### スマホ
-![image](https://github.com/PTOM76/pukiwiki-cleaskin/assets/58260965/895467b6-99c9-430c-814a-a2fa40a95d6f)
-![image](https://github.com/PTOM76/pukiwiki-cleaskin/assets/58260965/0403f6cb-ecc0-4768-b81a-dd8411e0547b)
+![image](https://github.com/PTOM76/pukiwiki-cleaskin/assets/58260965/53dd17f5-cae1-40f1-8378-042c313792ae)
+![image](https://github.com/PTOM76/pukiwiki-cleaskin/assets/58260965/4058ad1a-9f2c-4880-a08a-2a9e70d5c767)
 
 ## 特徴
 - PHP8対応
