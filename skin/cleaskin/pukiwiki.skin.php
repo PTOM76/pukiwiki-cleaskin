@@ -38,6 +38,8 @@ define("CLEASKIN_SEO", 1); // 1, 0
 // description
 define("CS_SEO_DESCRIPTION", "");
 
+define("CS_SEO_JSONLD", 0); // 1, 0
+
 
 
 // PukiWiki - Yet another WikiWikiWeb clone.
@@ -160,7 +162,8 @@ if (CLEASKIN_SEO) {
     <meta name="description" content="<?= CS_SEO_DESCRIPTION ?>" />
 <?php
   }
-  $root_url = (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'];
+  if (CS_SEO_JSONLD) {
+    $root_url = (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'];
 ?>
     <script type="application/ld+json">
     {
@@ -179,6 +182,7 @@ if (CLEASKIN_SEO) {
     }
     </script>
 <?php
+  }
 }
 ?>
 <?php echo $head_tag ?>
