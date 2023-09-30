@@ -418,7 +418,7 @@ div#header {
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom:10px;
-  width: 100vw;
+  width: 100%;
 }
 div#h_contents {
   padding:0;
