@@ -410,7 +410,7 @@ if (CLEASKIN_SHARE) {
 ?>
         </div>
         <?php
-          if (!$is_read && substr($body, 0, 3) !== '<h2') {
+          if (!$is_read && (substr($body, 0, 3) !== '<h2' || preg_match("/<h2(\s.*)?>/", $body))) {
             echo "<h2>" . $title . "</h2>";
           } 
         ?>
