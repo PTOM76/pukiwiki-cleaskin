@@ -17,9 +17,11 @@ pre, dl, ol, p, blockquote {
 blockquote {
   margin-left:32px;
 }
+body {
+  background-color:#DDEEFF;
+}
 body,td {
   color:black;
-  background-color:#DDEEFF;
   margin:0;
   font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans","メイリオ", Meiryo, "Arial", "Yu Gothic", sans-serif;
 }
