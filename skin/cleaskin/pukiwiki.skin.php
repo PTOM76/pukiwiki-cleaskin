@@ -1,7 +1,7 @@
 <?php
 /*
 name: cleaskin
-version: 1.6
+version: 1.7
 */
 
 if (file_exists(SKIN_DIR . "config.ini.php")) {
