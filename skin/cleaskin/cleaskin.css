@@ -752,14 +752,14 @@ span.new5 {
 }
 
 /* comment.inc.php */
-._p_comment_form input[name="msg"] {
+/*._p_comment_form input[name="msg"] {
   max-width:90%;
-}
+}*/
 
 /* pcomment.inc.php */
-._p_pcomment_form input[name="msg"] {
+/*._p_pcomment_form input[name="msg"] {
   max-width:90%;
-}
+}*/
 
 /* article.inc.php */
 ._p_article_form input[name="subject"] {
