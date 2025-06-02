@@ -862,6 +862,8 @@ tr.bugtrack_state_undef td {
 }
 
 input[type=submit], input[type=button], button {
+  appearance: none;
+  -webkit-appearance: none;
   text-decoration: none;
   text-align: center;
   background-color: #F0F0F0;
@@ -869,6 +871,9 @@ input[type=submit], input[type=button], button {
   font-size: 15px;
   transition: all 0.5s ease;
   border-radius: 4px;
+  padding: 5px;
+  color: black;
+  font-weight: normal;
 }
 
 input[type=submit]:hover, input[type=button]:hover, button:hover {
